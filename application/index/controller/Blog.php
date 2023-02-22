@@ -19,7 +19,7 @@ class Blog extends Base
         return $captcha->entry();
     }
 
-    public function getIndex(){
+    public function postIndex(){
         $model = new \app\index\facade\Blog();
         return $model->index();
     }
