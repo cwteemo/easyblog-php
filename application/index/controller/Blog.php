@@ -4,11 +4,7 @@
 namespace app\index\controller;
 
 
-use app\index\lib\Res;
-use app\index\facade\BlogTeamUser;
-use app\index\validate\LoginValidate;
 use think\captcha\Captcha;
-use think\Config;
 
 class Blog extends Base
 {
@@ -21,6 +17,11 @@ class Blog extends Base
         //$array = (array)Config::get('captcha');
         $captcha = new Captcha($array);
         return $captcha->entry();
+    }
+
+    public function getIndex(){
+        $model = new \app\index\facade\Blog();
+        return $model->index();
     }
 
 }
