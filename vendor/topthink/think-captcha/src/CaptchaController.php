@@ -2,19 +2,22 @@
 // +----------------------------------------------------------------------
 // | ThinkPHP [ WE CAN DO IT JUST THINK ]
 // +----------------------------------------------------------------------
-// | Copyright (c) 2006~2018 http://thinkphp.cn All rights reserved.
+// | Copyright (c) 2006-2015 http://thinkphp.cn All rights reserved.
 // +----------------------------------------------------------------------
 // | Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
 // +----------------------------------------------------------------------
-// | Author: liu21st <liu21st@gmail.com>
+// | Author: yunwuxin <448901948@qq.com>
 // +----------------------------------------------------------------------
 
-use think\Route;
+namespace think\captcha;
 
+use think\Config;
 
-/**
- * 用户相关
- */
-Route::controller('blog','index/Blog');
-Route::controller('user','index/User');
-Route::controller('file','index/File');
+class CaptchaController
+{
+    public function index($id = "")
+    {
+        $captcha = new Captcha((array)Config::get('captcha'));
+        return $captcha->entry($id);
+    }
+}

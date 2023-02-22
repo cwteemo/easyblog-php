@@ -12,9 +12,9 @@
 // 应用行为扩展定义文件
 return [
     // 应用初始化
-    'app_init'     => [],
+    'app_init'     => ['app\\behavior\\CORS'],
     // 应用开始
-    'app_begin'    => [],
+    'app_begin'    => ['app\\behavior\\AppBehavior'],
     // 模块初始化
     'module_init'  => [],
     // 操作开始执行
@@ -25,4 +25,8 @@ return [
     'log_write'    => [],
     // 应用结束
     'app_end'      => [],
+    // 响应开始发送
+    'response_send' => ['app\\behavior\\AppBehavior'],
+    // 响应结束
+    'response_end' => ['app\\behavior\\AppBehavior'],
 ];

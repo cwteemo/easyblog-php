@@ -6,10 +6,15 @@ namespace Composer\Autoload;
 
 class ComposerStaticInitf6e4be9979cb8df5f813e7e4d7a4a84b
 {
+    public static $files = array (
+        '1cfd2761b63b0a29ed23657ea394cb2d' => __DIR__ . '/..' . '/topthink/think-captcha/src/helper.php',
+    );
+
     public static $prefixLengthsPsr4 = array (
         't' => 
         array (
             'think\\composer\\' => 15,
+            'think\\captcha\\' => 14,
             'think\\' => 6,
         ),
         'a' => 
@@ -22,6 +27,10 @@ class ComposerStaticInitf6e4be9979cb8df5f813e7e4d7a4a84b
         'think\\composer\\' => 
         array (
             0 => __DIR__ . '/..' . '/topthink/think-installer/src',
+        ),
+        'think\\captcha\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/topthink/think-captcha/src',
         ),
         'think\\' => 
         array (
