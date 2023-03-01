@@ -14,4 +14,20 @@ class Blog extends Base
         $model = new BlogCategory();
         return $model->select();
     }
+
+    public function update($param)
+    {
+        $model = new BlogCategory();
+        $model->data($param);
+        $model->allowField(true)->isUpdate(true)->save();
+        return $model;
+    }
+
+    public function add($param)
+    {
+        $model = new BlogCategory();
+        $model->data($param);
+        $model->allowField(true)->isUpdate(false)->save();
+        return $model;
+    }
 }

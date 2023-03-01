@@ -24,4 +24,16 @@ class Blog extends Base
         return $model->index();
     }
 
+    public function postUpdate(){
+        $param = postParams();
+        $model = new \app\index\facade\Blog();
+        return $model->update($param);
+    }
+
+    public function postAdd(){
+        $param = postParams();
+        $model = new \app\index\facade\Blog();
+        return $model->add($param);
+    }
+
 }
