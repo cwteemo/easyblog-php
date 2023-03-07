@@ -36,4 +36,16 @@ class Blog extends Base
         return $model->add($param);
     }
 
+    public function postDel(){
+        $param = postParams();
+        $model = new \app\index\facade\Blog();
+        return $model->del($param);
+    }
+
+    public function postUpdate_sort(){
+        $param = postParams();
+        $model = new \app\index\facade\Blog();
+        return $model->update_sort($param);
+    }
+
 }

@@ -30,4 +30,21 @@ class Blog extends Base
         $model->allowField(true)->isUpdate(false)->save();
         return $model;
     }
+
+    public function del($where)
+    {
+        $model = new BlogCategory();
+        $model::destroy($where);
+        return true;
+    }
+
+    public function update_sort($list)
+    {
+        foreach ($list as $key => &$item) {
+            $item['sort'] = $key + 1;
+        }
+        $model = new BlogCategory();
+        $model->allowField(true)->isUpdate(true)->saveAll($list);
+        return $model;
+    }
 }
