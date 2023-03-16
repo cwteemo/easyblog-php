@@ -48,4 +48,17 @@ class Blog extends Base
         return $model->update_sort($param);
     }
 
+    public function postSelect()
+    {
+        $model = new \app\index\facade\Category();
+        return $model->getList();
+    }
+
+    public function postList()
+    {
+        $model = new \app\index\facade\Blog();
+        $param = postParams();
+        return $model->getList($param);
+    }
+
 }

@@ -2037,7 +2037,7 @@ class Query
      * @param array $options 表达式参数
      * @return $this
      */
-    protected function options(array $options)
+    public function options(array $options)
     {
         $this->options = $options;
         return $this;

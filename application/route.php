@@ -18,3 +18,4 @@ use think\Route;
 Route::controller('blog','index/Blog');
 Route::controller('user','index/User');
 Route::controller('file','index/File');
+Route::controller('category','index/Category');
