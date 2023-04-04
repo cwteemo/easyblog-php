@@ -19,9 +19,11 @@ class Blog extends Base
         return $captcha->entry();
     }
 
-    public function postIndex(){
+    public function postIndex()
+    {
+        $param = postParams();
         $model = new \app\index\facade\Blog();
-        return $model->index();
+        return $model->getList($param);
     }
 
     public function postUpdate(){
@@ -40,25 +42,6 @@ class Blog extends Base
         $param = postParams();
         $model = new \app\index\facade\Blog();
         return $model->del($param);
-    }
-
-    public function postUpdate_sort(){
-        $param = postParams();
-        $model = new \app\index\facade\Blog();
-        return $model->update_sort($param);
-    }
-
-    public function postSelect()
-    {
-        $model = new \app\index\facade\Category();
-        return $model->getList();
-    }
-
-    public function postList()
-    {
-        $model = new \app\index\facade\Blog();
-        $param = postParams();
-        return $model->getList($param);
     }
 
 }

@@ -12,6 +12,6 @@ class BlogCategory extends Base
         if ($where){
             $this->where($where);
         }
-        return $this->select();
+        return $this->order('sort ASC')->select();
     }
 }

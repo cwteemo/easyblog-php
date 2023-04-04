@@ -4,6 +4,7 @@
 namespace app\index\validate;
 
 
+use app\index\lib\Res;
 use think\Request;
 use think\Validate;
 
@@ -29,11 +30,7 @@ class BaseValidate extends Validate
                 $msg = $text;
                 break;
             }
-            die(json_encode([
-                'msg' => $msg,
-                'errorCode' => '1',
-                'data' => ''
-            ]));
+            Res::returnErr($msg);
 
         } else {
 
